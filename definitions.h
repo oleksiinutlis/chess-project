@@ -1,4 +1,6 @@
 #pragma once
 #include <cstdint>
 #include <string>
-#define u64 uint64_t
+
+// rust-like definitions
+using u64 = uint64_t;

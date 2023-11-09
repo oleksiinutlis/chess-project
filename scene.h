@@ -25,6 +25,7 @@ public:
     Scene(mainwindow& mainWindow, QWidget* parent = nullptr) : QWidget(parent), m_mainWindow(mainWindow)
     {
         connect(this, &Scene::updateSignal, this, QOverload<>::of(&Scene::update));
+        setMouseTracking(true);
     }   
 
     void init() {
@@ -34,7 +35,7 @@ public:
         m_mainWindow.centralWidget()->layout()->setSpacing(0);
         m_mainWindow.centralWidget()->layout()->setContentsMargins(0,0,0,0);
         m_mainWindow.statusBar()->hide();
-        //m_mainWindow.setTabShape(QTabWidget::Triangular); TODO???????
+        //m_mainWindow.setTabShape(QTabWidget::Triangular); TODO
         QScreen* screen = QGuiApplication::primaryScreen();
         QRect screenGeometry = screen->geometry();
         int x = (screenGeometry.width() - m_mainWindow.width()) / 2;
@@ -63,5 +64,29 @@ protected:
                 painter.drawRect(i * 100, j * 100, 100, 100);
             }
         }
+    }
+
+    void mousePressEvent(QMouseEvent* event) override {
+        //        if ( m_mouseEventHandler )
+        //        {
+        //            m_mouseEventHandler->mousePressEvent(event);
+        //        }
+        exit(-1);
+    }
+
+    void mouseMoveEvent(QMouseEvent* event) override {
+        //if (m_mouseEventHandler)
+        //{
+        //    m_mouseEventHandler->mouseMoveEvent(event);
+        //}
+        exit(-1);
+    }
+
+    void mouseReleaseEvent(QMouseEvent* event) override {
+        //        if ( m_mouseEventHandler )
+        //        {
+        //            m_mouseEventHandler->mouseReleaseEvent(event);
+        //        }
+        exit(-1);
     }
 };
