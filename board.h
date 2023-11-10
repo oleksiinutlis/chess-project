@@ -4,7 +4,7 @@
 class Board {
 public:
 	void setupBoard(std::string FEN);
-
+	// Future TODO: set custom positions
 private:
 	u64 m_whitePawns;
 	u64 m_whiteKnights;
@@ -20,7 +20,7 @@ private:
 	u64 m_blackKing;
 
 	std::string m_FEN = "";
-	//TODO
+	//TODO3 : Legal moves, etc.
 public:
 	Board() {
 		m_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -30,4 +30,5 @@ public:
 
 void Board::setupBoard(std::string FEN) {
 	m_whiteBishops = 1;
+	//TODO4: setting up piece position, FEN Parsing
 }
